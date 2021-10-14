@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
 .header_bg {
-    background-image: url(../img/header_bg.png);
+    background-image: url(../images/header_bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 7px 0 130px 0;
@@ -43,7 +43,7 @@ img {
     margin-bottom: 28px;
 }
 
-.info {
+.info-box {
     color: #FFFFFF;
 }
 .info-title {
@@ -57,23 +57,23 @@ img {
     margin-bottom: 16px;
 }
 .duration .info-title {
-    background: url(../img/duration.png) no-repeat ;
+    background: url(../images/duration.png) no-repeat ;
 }
 
 .yacht .info-title {
-    background: url(../img/yacht.png) no-repeat ;
+    background: url(../images/yacht.png) no-repeat ;
 }
 
 .departures .info-title {
-    background: url(../img/departures.png) no-repeat ;
+    background: url(../images/departures.png) no-repeat ;
 }
 
 .arrivals .info-title {
-    background: url(../img/departures.png) no-repeat ;
+    background: url(../images/departures.png) no-repeat ;
 }
 
 .requirements .info-title {
-    background: url(../img/requirements.png) no-repeat ;
+    background: url(../images/requirements.png) no-repeat ;
 }
 .date_tour {
     margin-top: -94px;
@@ -135,7 +135,7 @@ font-size: 24px;
 line-height: 28px;
 display: flex;
 margin-right: 6px;
-} 
+}
 .price-box .currency {
     font-weight: bold;
 font-size: 16px;
@@ -169,10 +169,10 @@ padding: 14px 27px;
     height: 17px;
 }
 .arrow-left {
-    background: url(../img/left-arrow.png) no-repeat;
+    background: url(../images/left-arrow.png) no-repeat;
 }
 .arrow-right {
-    background: url(../img/right-arrow.png) no-repeat;
+    background: url(../images/right-arrow.png) no-repeat;
 }
 .arrow:first-child {
     margin-right: 7px;
@@ -209,7 +209,7 @@ padding: 14px 27px;
 }
 .see_all span {
     padding-left: 36px;
-    background: url(../img/see_all.png) no-repeat;
+    background: url(../images/see_all.png) no-repeat;
     height: 25px;
     display: block;
     color: #333971;
@@ -324,7 +324,7 @@ color: #333971;
 }
 .footer-info {
     padding: 111px 0 120px 0;
-    background: url(../img/footer_info.png) no-repeat;
+    background: url(../images/footer_info.png) no-repeat;
     background-size: cover;
 }
 .footer-info .title {
@@ -343,7 +343,7 @@ margin-bottom: 55px;
     /* identical to box height */
     padding-left: 40px;
     margin-bottom: 20px;
-    background: url('../img/nfo-li.png') no-repeat;
+    background: url('../images/nfo-li.png') no-repeat;
     color: #FFFFFF;
 }
 .footer-info .date_tour {
