@@ -8,9 +8,6 @@
 ol, ul {
     padding-left: 0 !important;
 }
-.mb-13 {
-    margin-bottom: 13px;
-}
 img {
     display: block;
 }
@@ -47,9 +44,6 @@ img {
 }
 
 .info {
-    display: grid;
-    grid-template-areas: "duration yacht departures arrivals requirements";
-    grid-template-columns: 1fr 170px 1fr 1fr 1fr;
     color: #FFFFFF;
 }
 .info-title {
@@ -64,27 +58,22 @@ img {
 }
 .duration .info-title {
     background: url(../img/duration.png) no-repeat ;
-    grid-area: duration;
 }
 
 .yacht .info-title {
     background: url(../img/yacht.png) no-repeat ;
-    grid-area: yacht;
 }
 
 .departures .info-title {
     background: url(../img/departures.png) no-repeat ;
-    grid-area: departures;
 }
 
 .arrivals .info-title {
     background: url(../img/departures.png) no-repeat ;
-    grid-area: arrivals;
 }
 
 .requirements .info-title {
     background: url(../img/requirements.png) no-repeat ;
-    grid-area: requirements;
 }
 .date_tour {
     margin-top: -94px;
@@ -199,12 +188,21 @@ padding: 14px 27px;
     margin-bottom: 60px;
     position: relative;
 }
+.galery img {
+    width: 100%;
+}
+.image-box {
+    margin-right: 15px;
+}
+.image-box:last-child {
+    margin-right: 0;
+}
 .galery .see_all {
     background-color: #fff;
     border-radius: 10px;
     font-size: 18px;
     bottom: 8px;
-    right: 8px;
+    right: 20px;
     padding: 14px 20px;
     cursor: pointer;
     line-height: 21px;
@@ -291,6 +289,9 @@ color: #333971;
 line-height: 32px;
 color: #333971
 }
+.program-day-img {
+    height: 215px;
+}
 .program img:first-child {
     margin-right: 6px;
 }
@@ -364,9 +365,130 @@ color: #333971;
     margin-bottom: 0;
     margin-top: 55px;
 }
-@media (min-width: 1024px) {
-   .info {
-       grid-template-areas: "yacht duration departures arrivals requirements";
-       grid-template-columns:  1fr 170px 1fr 1fr 1fr;
-   }
+@media (max-width: 1200px) {
+    .duration, .yacht, .departures {
+        margin-bottom: 45px;
+    }
+    .header_bg .title {
+        margin-left: 35px;
+    }
+    .details-box:first-child{
+        margin-bottom: 84px;
+    }
+    .what-awaits p {
+        max-width: 100% !important;
+    }
+}
+@media (min-width: 1300px) {
+    .image-box:last-child {
+        display: block !important;
+    }
+}
+@media (min-width: 1000px) {
+    .image-box:nth-child(4){
+        display: block !important;
+    }
+}
+@media (max-width: 775px) {
+    .what-awaits p {
+        font-size: 13px;
+    }
+    .program .text {
+        font-size: 13px;
+line-height: 180%;
+    }
+    .header_bg .title {
+        font-size: 30px;
+        line-height: 123.5%;
+    }
+    .date_tour {
+        padding: 20px;
+    }
+    .date_tour .date {
+        max-width: 30%;
+    }
+    .what-awaits .title, .dive-saits .title, .program .title, .details .title {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .details .title {
+        margin-bottom: 30px !important;
+    }
+    .details .subtitle {
+        font-size: 19px;
+        margin-bottom: 10px !important;
+    }
+    .details ul li {
+        font-size: 13px;
+    }
+    .program .title {
+        margin-bottom: 28px !important;
+    }
+    .program .develop {
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+    }
+    .program {
+        padding: 20px !important;
+        margin-bottom: 50px !important;
+    }
+    .program .minus {
+        font-size: 12px !important;
+    }
+    .program-day-box {
+        padding: 16px !important;
+    }
+    .program-day-box .day {
+        font-size: 16px;
+line-height: 19px;
+margin-bottom: 11px;
+    }
+    .date_tour .title {
+        font-size: 24px !important;
+    }
+    .date_tour .day {
+        font-size: 15px !important;
+    }
+    .arrow-box {
+        justify-content: space-between;
+    }
+    .date_tour .title {
+        font-size: 18px;
+    }
+    .date_tour .divide {
+        width: 8px;
+    }
+    .date_tour .year {
+        margin-left: 5px;
+    }
+    .date_tour .month, .info-title, .info-descr, .footer-info ul li {
+        font-size: 13px !important;
+    }
+    .date_tour .year, .date_tour .currency {
+        font-size: 10px !important;
+    }
+    .date_tour .price {
+        font-size: 16px !important;
+    }
+    .price-box .currency {
+        margin-right: 14px;
+    }
+    .date_tour .reserve {
+        font-size: 13px !important;
+    }
+    .footer-info .title {
+        font-size: 30px;
+line-height: 123.5%;
+    }
+}
+@media (min-width: 550px) {
+    .image-box:nth-child(2) {
+        display: block !important;
+    }
+}
+@media (max-width: 550px) {
+    .dive-saits .image-container {
+        justify-content: center !important;
+    }
 }
