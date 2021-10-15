@@ -32,7 +32,7 @@ $this->registerCssFile("/css/product.css");
     <div class="container">
         <h1 class="title"><?=$model->name?></h1>
         <div class="info-box">
-            <div class="row  justify-content-start justify-content-lg-between">
+            <div class="row  justify-content-start justify-content-xl-between">
                 <?php if ($model->groupedTours['duration'] || $model->minDive):?>
                     <div class="mb-3 col-6 col-lg-4 col-xl-2">
                         <div class="duration">
@@ -97,27 +97,29 @@ $this->registerCssFile("/css/product.css");
 </div>
 <?php if ($model->showTours):?>
     <?php if ($model->groupedTours['main']):?>
-        <div class="container">
-            <div class="date_tour">
-                <div class="title"><?=Yii::t('app', 'Tour dates')?></div>
+    <div class="wrap__container">
+      <div class="container">
+        <div class="date_tour">
+          <div class="title"><?= Yii::t('app', 'Tour dates') ?></div>
 
-                <?php Pjax::begin([
-                    'enablePushState' => false, // to disable push state
-                    'enableReplaceState' => false // to disable replace state
-                ]);?>
-                <?= ListView::widget([
-                    'dataProvider' => $model->toursData,
-                    'itemView' => '_listToursProduct',
-                    'emptyText' => '',
-                    'itemOptions' => ['class' => 'date-box d-flex justify-content-between'],
-                    'layout' => '{items}{pager}',
-                    'pager' => [
-                        'class' => \frontend\components\LinkPager::className()
-                    ]
-                ]);?>
-                <?php Pjax::end();?>
-            </div>
+            <?php Pjax::begin([
+                'enablePushState' => false, // to disable push state
+                'enableReplaceState' => false // to disable replace state
+            ]); ?>
+            <?= ListView::widget([
+                'dataProvider' => $model->toursData,
+                'itemView' => '_listToursProduct',
+                'emptyText' => '',
+                'itemOptions' => ['class' => 'date-box d-flex justify-content-between'],
+                'layout' => '{items}{pager}',
+                'pager' => [
+                    'class' => \frontend\components\LinkPager::className()
+                ]
+            ]); ?>
+            <?php Pjax::end(); ?>
         </div>
+      </div>
+    </div>
     <?php endif;?>
 <?php endif;?>
 <div class="container">
