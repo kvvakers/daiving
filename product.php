@@ -32,7 +32,7 @@ $this->registerCssFile("/css/product.css");
     <div class="container">
         <h1 class="title"><?=$model->name?></h1>
         <div class="info-box">
-            <div class="row  justify-content-start justify-content-lg-between">
+            <div class="row  justify-content-start justify-content-xl-between">
                 <?php if ($model->groupedTours['duration'] || $model->minDive):?>
                     <div class="mb-3 col-6 col-lg-4 col-xl-2">
                         <div class="duration">
@@ -97,172 +97,178 @@ $this->registerCssFile("/css/product.css");
 </div>
 <?php if ($model->showTours):?>
     <?php if ($model->groupedTours['main']):?>
-        <div class="container">
-            <div class="date_tour">
-                <div class="title"><?=Yii::t('app', 'Tour dates')?></div>
+    <div class="wrap__container">
+      <div class="container">
+        <div class="date_tour">
+          <div class="title"><?= Yii::t('app', 'Tour dates') ?></div>
 
-                <?php Pjax::begin([
-                    'enablePushState' => false, // to disable push state
-                    'enableReplaceState' => false // to disable replace state
-                ]);?>
-                <?= ListView::widget([
-                    'dataProvider' => $model->toursData,
-                    'itemView' => '_listToursProduct',
-                    'emptyText' => '',
-                    'itemOptions' => ['class' => 'date-box d-flex justify-content-between'],
-                    'layout' => '{items}{pager}',
-                    'pager' => [
-                        'class' => \frontend\components\LinkPager::className()
-                    ]
-                ]);?>
-                <?php Pjax::end();?>
-            </div>
+            <?php Pjax::begin([
+                'enablePushState' => false, // to disable push state
+                'enableReplaceState' => false // to disable replace state
+            ]); ?>
+            <?= ListView::widget([
+                'dataProvider' => $model->toursData,
+                'itemView' => '_listToursProduct',
+                'emptyText' => '',
+                'itemOptions' => ['class' => 'date-box d-flex justify-content-between'],
+                'layout' => '{items}{pager}',
+                'pager' => [
+                    'class' => \frontend\components\LinkPager::className()
+                ]
+            ]); ?>
+            <?php Pjax::end(); ?>
         </div>
+      </div>
+    </div>
     <?php endif;?>
 <?php endif;?>
-<div class="container">
+<div class="wrap__container">
+  <div class="container">
     <div class="what-awaits">
-        <div class="title"><?=Yii::t('app', 'What awaits us')?></div>
-        <?php if($model->features):?>
-            <div class="slider d-flex justify-content-between">
-                <?php foreach ($model->features as $tag): ?>
-                    <div class="d-flex align-items-center flex-column">
-                        <img src="/images/slider_awaits<?=$tag->id?>.png" alt="">
-                        <p class="text-center"><?=$tag->name?></p>
-                    </div>
-                <?php endforeach;?>
-            </div>
-        <?php endif;?>
-        <?php $images = $model->images;?>
-        <div class="galery container">
-            <div class="row">
-                <div class="col-12 col-lg-8 ">
-                    <div>
-                        <a href="<?=$model->getThumbUploadUrl('logo', 'w850')?>" class="fancy-gallery" data-fancybox-group="product_gallery" title="<?=$model->name?>">
-                            <img src="<?=$model->getThumbUploadUrl('logo', 'w1200')?>" alt="<?=$model->name?>" title="<?=$model->name?>">
-                        </a>
-                    </div>
-                    <?php if(count($images) > 2){?>
-                        <div class="position-relative d-block d-lg-none">
-                            <div class="see_all position-absolute" onclick="$('.galery .fancy-gallery').eq(0).click()">
-                                <span>Cмотреть <?=count($images)?> фото</span>
-                            </div>
-                        </div>
-                    <?php }?>
+      <div class="title"><?= Yii::t('app', 'What awaits us') ?></div>
+        <?php if ($model->features): ?>
+          <div class="slider d-flex justify-content-between">
+              <?php foreach ($model->features as $tag): ?>
+                <div class="d-flex align-items-center flex-column">
+                  <img src="/images/slider_awaits<?= $tag->id ?>.png" alt="">
+                  <p class="text-center"><?= $tag->name ?></p>
                 </div>
-                <?php if (count($images) > 0) { ?>
-                    <div class="col-4 d-none d-lg-block">
-                        <div>
-                            <?php foreach ($images as $k => $image) { ?>
-                                <?php if ($k == 0) { ?>
-                                    <div class="mb-3">
-                                        <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery"
-                                           data-fancybox-group="product_gallery" title="<?= $image->name ?: $model->name ?>">
-                                            <img src="<?= $image->getUrl('h300') ?>" alt="<?= $image->name ?: $model->name ?>"
-                                                 title="<?= $image->name ?: $model->name ?>">
-                                        </a>
-                                    </div>
-                                <?php } elseif ($k == 1) { ?>
-                                    <div class="position-relative">
-                                        <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery"
-                                           data-fancybox-group="product_gallery" title="<?= $image->name ?: $model->name ?>">
-                                            <img src="<?= $image->getUrl('h300') ?>" alt="<?= $image->name ?: $model->name ?>"
-                                                 title="<?= $image->name ?: $model->name ?>">
-                                        </a>
-                                    </div>
-                                <?php } else { ?>
-                                    <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery"
-                                       data-fancybox-group="product_gallery" title="<?= $image->name ?: $model->name ?>"
-                                       style="display: none;">
-                                    </a>
-                                <?php } ?>
-                            <?php } ?>
-                            <?php if(count($images) > 2){?>
-                                <div class="see_all position-absolute" onclick="$('.galery .fancy-gallery').eq(0).click()">
-                                    <span>Cмотреть <?=count($images)?> фото</span>
-                                </div>
-                            <?php }?>
-                        </div>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
-        <?php if($model->descr):?>
-            <div class="text"><?=$model->descr?></div>
-        <?php endif;?>
-    </div>
-    <?php if($model->sites):?>
-        <div class="dive-saits">
-            <div class="title"><?=Yii::t('app', 'Dive-site along the route')?></div>
-            <div class="d-flex justify-content-between image-container">
-                <?php foreach ($model->sites as $k => $site): ?>
-                    <div class="image-box <?=$k==0?'':'d-none'?>">
-                        <a href="<?=Url::toRoute(['sights/show', 'country' => $site->country->url, 'url' => $site->url])?>">
-                            <?=Html::img($site->getThumbUploadUrl('logo', 'h300'), ['alt' => $site->name,'title' => $site->name])?>
-                        </a>
-                        <div class="text"><?=$site->name?></div>
-                    </div>
-                <?php endforeach;?>
-            </div>
-        </div>
-    <?php endif;?>
-    <?php if(!empty($model->days)):?>
-        <div class="program">
-            <div class="title"><?=Yii::t('app', 'Tour program')?></div>
-            <?php foreach ($model->days as $k => $day):?>
-                <div class="program-day-box">
-                    <div class="d-flex justify-content-between mb-md-4">
-                        <div class="day"><?=$day->name?></div>
-                        <div class="develop minus plus">&mdash;</div>
-                    </div>
-                    <div class="day-content">
-                        <div class="text mb-4">
-                            <?=$day->description?>
-                        </div>
-                        <?php if($day->images):?>
-                            <div class="container">
-                                <div class="row mb-5">
-                                    <?php foreach ($day->images as $k => $image):?>
-                                        <div class="<?=$k==0?'col-12 col-md-6':'col-6 d-none d-md-block'?>">
-                                            <a href="<?=$image->getUrl('original')?>" class="fancy-gallery w-100 program-day-img"
-                                               data-fancybox-group="day<?=$day->id?>_gallery"
-                                               title="<?=$image->name?:$day->name?>">
-                                                <?=Html::img($image->getUrl('h300'),
-                                                    ['alt' => $image->name?:$day->name, 'title' => $image->name?:$day->name]);?>
-                                            </a>
-                                        </div>
-                                    <?php endforeach;?>
-                                </div>
-                            </div>
-                        <?php endif;?>
-                    </div>
-                </div>
-            <?php endforeach;?>
-        </div>
-    <?php endif;?>
-    <div class="details">
-        <div class="title"><?=Yii::t('app', 'Сost details')?></div>
+              <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+        <?php $images = $model->images; ?>
+      <div class="galery container">
         <div class="row">
-            <div class="col-lg-6 col-xl-4">
-                <div class="details-box">
-                    <div class="subtitle">Включено</div>
-                    <?=$model->include?>
-                </div>
+          <div class="col-12 col-lg-8 ">
+            <div>
+              <a href="<?= $model->getThumbUploadUrl('logo', 'w850') ?>" class="fancy-gallery"
+                 data-fancybox-group="product_gallery" title="<?= $model->name ?>">
+                <img src="<?= $model->getThumbUploadUrl('logo', 'w1200') ?>" alt="<?= $model->name ?>"
+                     title="<?= $model->name ?>">
+              </a>
             </div>
-            <div class="col-lg-6 col-xl-4">
-                <div class="details-box">
-                    <div class="subtitle">Не включено</div>
-                    <?=$model->notInclude?>
+              <?php if (count($images) > 2) { ?>
+                <div class="position-relative d-block d-lg-none">
+                  <div class="see_all position-absolute" onclick="$('.galery .fancy-gallery').eq(0).click()">
+                    <span>Cмотреть <?= count($images) ?> фото</span>
+                  </div>
                 </div>
-            </div>
-            <div class="col-lg-6 col-xl-4">
-                <div class="details-box">
-                    <div class="subtitle">Дополнительные расходы</div>
-                    <?=$model->additionalCost?>
+              <?php } ?>
+          </div>
+            <?php if (count($images) > 0) { ?>
+              <div class="col-4 d-none d-lg-block">
+                <div>
+                    <?php foreach ($images as $k => $image) { ?>
+                        <?php if ($k == 0) { ?>
+                        <div class="mb-3">
+                          <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery"
+                             data-fancybox-group="product_gallery" title="<?= $image->name ?: $model->name ?>">
+                            <img src="<?= $image->getUrl('h300') ?>" alt="<?= $image->name ?: $model->name ?>"
+                                 title="<?= $image->name ?: $model->name ?>">
+                          </a>
+                        </div>
+                        <?php } elseif ($k == 1) { ?>
+                        <div class="position-relative">
+                          <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery"
+                             data-fancybox-group="product_gallery" title="<?= $image->name ?: $model->name ?>">
+                            <img src="<?= $image->getUrl('h300') ?>" alt="<?= $image->name ?: $model->name ?>"
+                                 title="<?= $image->name ?: $model->name ?>">
+                          </a>
+                        </div>
+                        <?php } else { ?>
+                        <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery"
+                           data-fancybox-group="product_gallery" title="<?= $image->name ?: $model->name ?>"
+                           style="display: none;">
+                        </a>
+                        <?php } ?>
+                    <?php } ?>
+                    <?php if (count($images) > 2) { ?>
+                      <div class="see_all position-absolute" onclick="$('.galery .fancy-gallery').eq(0).click()">
+                        <span>Cмотреть <?= count($images) ?> фото</span>
+                      </div>
+                    <?php } ?>
                 </div>
-            </div>
+              </div>
+            <?php } ?>
         </div>
+      </div>
+        <?php if ($model->descr): ?>
+          <div class="text"><?= $model->descr ?></div>
+        <?php endif; ?>
     </div>
+      <?php if ($model->sites): ?>
+        <div class="dive-saits">
+          <div class="title"><?= Yii::t('app', 'Dive-site along the route') ?></div>
+          <div class="d-flex justify-content-between image-container">
+              <?php foreach ($model->sites as $k => $site): ?>
+                <div class="image-box <?= $k == 0 ? '' : 'd-none' ?>">
+                  <a href="<?= Url::toRoute(['sights/show', 'country' => $site->country->url, 'url' => $site->url]) ?>">
+                      <?= Html::img($site->getThumbUploadUrl('logo', 'h300'), ['alt' => $site->name, 'title' => $site->name]) ?>
+                  </a>
+                  <div class="text"><?= $site->name ?></div>
+                </div>
+              <?php endforeach; ?>
+          </div>
+        </div>
+      <?php endif; ?>
+      <?php if (!empty($model->days)): ?>
+        <div class="program">
+          <div class="title"><?= Yii::t('app', 'Tour program') ?></div>
+            <?php foreach ($model->days as $k => $day): ?>
+              <div class="program-day-box">
+                <div class="d-flex justify-content-between mb-md-4">
+                  <div class="day"><?= $day->name ?></div>
+                  <div class="develop minus plus">&mdash;</div>
+                </div>
+                <div class="day-content">
+                  <div class="text mb-4">
+                      <?= $day->description ?>
+                  </div>
+                    <?php if ($day->images): ?>
+                      <div class="container">
+                        <div class="row mb-5">
+                            <?php foreach ($day->images as $k => $image): ?>
+                              <div class="<?= $k == 0 ? 'col-12 col-md-6' : 'col-6 d-none d-md-block' ?>">
+                                <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery w-100 program-day-img"
+                                   data-fancybox-group="day<?= $day->id ?>_gallery"
+                                   title="<?= $image->name ?: $day->name ?>">
+                                    <?= Html::img($image->getUrl('h300'),
+                                        ['alt' => $image->name ?: $day->name, 'title' => $image->name ?: $day->name]); ?>
+                                </a>
+                              </div>
+                            <?php endforeach; ?>
+                        </div>
+                      </div>
+                    <?php endif; ?>
+                </div>
+              </div>
+            <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+    <div class="details">
+      <div class="title"><?= Yii::t('app', 'Сost details') ?></div>
+      <div class="row">
+        <div class="col-lg-6 col-xl-4">
+          <div class="details-box">
+            <div class="subtitle">Включено</div>
+              <?= $model->include ?>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-4">
+          <div class="details-box">
+            <div class="subtitle">Не включено</div>
+              <?= $model->notInclude ?>
+          </div>
+        </div>
+        <div class="col-lg-6 col-xl-4">
+          <div class="details-box">
+            <div class="subtitle">Дополнительные расходы</div>
+              <?= $model->additionalCost ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="footer-info">
     <?php if ($model->entity->groupedTours['main']):?>

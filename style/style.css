@@ -365,6 +365,9 @@ color: #333971;
     margin-bottom: 0;
     margin-top: 55px;
 }
+.wrap__container {
+    background: #fff;
+}
 @media (max-width: 1200px) {
     .duration, .yacht, .departures {
         margin-bottom: 45px;
