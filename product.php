@@ -32,9 +32,9 @@ $this->registerCssFile("/css/product.css");
     <div class="container">
         <h1 class="title"><?=$model->name?></h1>
         <div class="info-box">
-            <div class="row">
+            <div class="row  justify-content-start justify-content-lg-between">
                 <?php if ($model->groupedTours['duration'] || $model->minDive):?>
-                    <div class="col-6 col-lg-4 col-xl-2">
+                    <div class="mb-3 col-6 col-lg-4 col-xl-2">
                         <div class="duration">
                             <div class="info-title">Длительность</div>
                             <div class="info-descr">
@@ -53,26 +53,26 @@ $this->registerCssFile("/css/product.css");
                         </div>
                     </div>
                 <?php endif;?>
-                <div class="col-6 col-lg-4 col-xl-2">
+                <div class="mb-3 col-6 col-lg-4 col-xl-2">
                     <div class="yacht">
                         <div class="info-title">Яхта</div>
                         <div class="info-descr"><?=$model->entity->name?></div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-4 col-xl-2">
+                <div class="mb-3 col-6 col-lg-4 col-xl-2">
                     <div class="departures">
                         <div class="info-title">Порт отправления</div>
                         <div class="info-descr"><?=$model->departurePort?></div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-4 col-xl-2">
+                <div class="mb-3 col-6 col-lg-4 col-xl-2">
                     <div class="arrivals">
                         <div class="info-title">Порт прибытия</div>
                         <div class="info-descr"><?=$model->arrivalPort?></div>
                     </div>
                 </div>
                 <?php if ($model->countDive || $model->minCertificate):?>
-                    <div class="col-6 col-lg-4 col-xl-2">
+                    <div class="mb-3 col-6 col-lg-4 col-xl-2">
                         <div class="requirements">
                             <div class="info-title">Требования</div>
                             <div class="info-descr">
