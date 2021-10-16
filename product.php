@@ -157,7 +157,7 @@ $this->registerCssFile("/css/product.css");
           </div>
             <?php if (count($images) > 0) { ?>
               <div class="col-4 d-none d-lg-block">
-                <div>
+                <div class="d-flex flex-column h-100 justify-content-between">
                     <?php foreach ($images as $k => $image) { ?>
                         <?php if ($k == 0) { ?>
                         <div class="mb-3">

@@ -368,6 +368,11 @@ color: #333971;
 .wrap__container {
     background: #fff;
 }
+.fancy-gallery {
+    border-radius: 12px;
+    overflow: hidden;
+    display: block;
+}
 @media (max-width: 1200px) {
     .duration, .yacht, .departures {
         margin-bottom: 45px;
