@@ -199,7 +199,7 @@ $this->registerCssFile("/css/product.css");
       <?php if ($model->sites): ?>
         <div class="dive-saits">
           <div class="title"><?= Yii::t('app', 'Dive-site along the route') ?></div>
-          <div class="d-flex justify-content-between image-container">
+          <div class="d-flex gap-3 overflow-auto">
               <?php foreach ($model->sites as $k => $site): ?>
                 <div class="image-box <?= $k == 0 ? '' : 'd-none' ?>">
                   <a href="<?= Url::toRoute(['sights/show', 'country' => $site->country->url, 'url' => $site->url]) ?>">
@@ -218,24 +218,30 @@ $this->registerCssFile("/css/product.css");
               <div class="program-day-box">
                 <div class="d-flex justify-content-between mb-md-4">
                   <div class="day"><?= $day->name ?></div>
-                  <div class="develop minus plus">&mdash;</div>
+                  <div class="develop minus plus">
+                    <svg class="ico-minus" width="20" height="3" viewBox="0 0 20 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="20" height="3" fill="#333971"/>
+                    </svg>
+                    <svg class="ico-plus" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect y="9" width="20" height="3" fill="#333971"/>
+                      <rect x="8.5" y="20.5" width="20" height="3" transform="rotate(-90 8.5 20.5)" fill="#333971"/>
+                    </svg>
+                  </div>
                 </div>
                 <div class="day-content">
                   <div class="text mb-4">
                       <?= $day->description ?>
                   </div>
                     <?php if ($day->images): ?>
-                      <div class="container">
-                        <div class="row mb-5">
+                      <div>
+                        <div class="d-flex gap-3 mb-5 overflow-auto">
                             <?php foreach ($day->images as $k => $image): ?>
-                              <div class="<?= $k == 0 ? 'col-12 col-md-6' : 'col-6 d-none d-md-block' ?>">
                                 <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery w-100 program-day-img"
                                    data-fancybox-group="day<?= $day->id ?>_gallery"
                                    title="<?= $image->name ?: $day->name ?>">
                                     <?= Html::img($image->getUrl('h300'),
                                         ['alt' => $image->name ?: $day->name, 'title' => $image->name ?: $day->name]); ?>
                                 </a>
-                              </div>
                             <?php endforeach; ?>
                         </div>
                       </div>
