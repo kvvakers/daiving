@@ -8,7 +8,7 @@ body {
     background-image: url(../images/header_bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 130px 0 0;
+    padding: 345px 0 0;
 }
 
 ol, ul {
@@ -248,7 +248,7 @@ img {
 .what-awaits p {
     color: #333971;
     font-size: 18px;
-    line-height: 18px;
+    line-height: 180%;
     margin-bottom: 45px;
 }
 
@@ -339,7 +339,7 @@ img {
 }
 
 .details {
-    margin-bottom: 171px;
+    padding-bottom: 171px;
 }
 
 .details-box {
@@ -361,12 +361,7 @@ img {
 .details ul li {
     font-size: 16px;
     line-height: 167.19%;
-    /* or 27px */
-
     text-indent: 10px;
-
-    /* dark */
-
     color: #333971;
 }
 
@@ -432,20 +427,24 @@ img {
     overflow: hidden;
     display: block;
 }
-.ico-minus, .ico-plus {
+.ico-minus {
     display: none;
 }
-.minus.plus.ico-plus {
-    display: none;
-}
-.minus.plus.ico-minus {
+.ico-minus {
     display: block;
 }
-.minus.ico-plus {
+.program-day-box--show .ico-minus {
     display: block;
 }
-.minus.ico-minus {
+.program-day-box--show .ico-minus {
     display: none;
+}
+
+.what-awaits {
+    padding-top: 65px;
+}
+#main {
+    background: #2E346D;
 }
 @media (max-width: 1200px) {
     .duration, .yacht, .departures {
