@@ -430,13 +430,13 @@ img {
 .ico-minus {
     display: none;
 }
-.ico-minus {
+.ico-plus {
     display: block;
 }
 .program-day-box--show .ico-minus {
     display: block;
 }
-.program-day-box--show .ico-minus {
+.program-day-box--show .ico-plus {
     display: none;
 }
 
