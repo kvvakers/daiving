@@ -389,7 +389,8 @@ img {
     /* identical to box height */
     padding-left: 40px;
     margin-bottom: 20px;
-    background: url('../images/nfo-li.png') no-repeat;
+    background-right: no-repeat;
+    background-size: cover;
     color: #FFFFFF;
 }
 
