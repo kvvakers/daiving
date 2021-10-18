@@ -448,6 +448,7 @@ img {
 .day-content {
     max-height: 0;
     transition: max-height .5s;
+    overflow: auto;
 }
 
 .program-day-box--show .day-content {
