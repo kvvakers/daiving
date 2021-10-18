@@ -28,7 +28,7 @@ $this->registerCssFile("https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bo
 $this->registerCssFile("/css/product.css");
 ?>
 
-<div class="header_bg" style="background-image: url("https://safarimaris.com/images/header_bg.png")">
+<div class="header_bg" style="background-image: url('https://safarimaris.com/images/header_bg.png')">
     <div class="container">
         <h1 class="title"><?=$model->name?></h1>
         <div class="info-box">
@@ -276,7 +276,7 @@ $this->registerCssFile("/css/product.css");
     </div>
   </div>
 </div>
-<div class="footer-info" style="background-image: url("https://safarimaris.com/images/header_bg.png")">
+<div class="footer-info" style="background-image: url('https://safarimaris.com/images/header_bg.png')">
     <?php if ($model->entity->groupedTours['main']):?>
         <div class="container">
             <div class="row">
