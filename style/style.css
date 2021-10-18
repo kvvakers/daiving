@@ -4,8 +4,8 @@
 body {
     font-family: Roboto;
 }
+
 .header_bg {
-    background-image: url(../images/header_bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 345px 0 0;
@@ -422,30 +422,72 @@ img {
 .fancy-gallery,
 .dive-saits img,
 .program img,
-.day-content img{
+.day-content img {
     border-radius: 12px;
     overflow: hidden;
     display: block;
 }
+
 .ico-minus {
     display: none;
 }
+
 .ico-plus {
     display: block;
 }
+
 .program-day-box--show .ico-minus {
     display: block;
 }
+
 .program-day-box--show .ico-plus {
     display: none;
+}
+
+.day-content {
+    max-height: 0;
+    transition: max-height .5s;
+}
+
+.program-day-box--show .day-content {
+    max-height: 500px;
 }
 
 .what-awaits {
     padding-top: 65px;
 }
+
 #main {
     background: #2E346D;
 }
+
+.links-box {
+    background: transparent;
+}
+
+.links-box__list {
+    padding-bottom: 55px;
+    border-bootom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+}
+
+.links-box .links-box__link {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
 @media (max-width: 1200px) {
     .duration, .yacht, .departures {
         margin-bottom: 45px;

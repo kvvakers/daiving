@@ -28,7 +28,7 @@ $this->registerCssFile("https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bo
 $this->registerCssFile("/css/product.css");
 ?>
 
-<div class="header_bg">
+<div class="header_bg" style="background-image: https://safarimaris.com/images/header_bg.png">
     <div class="container">
         <h1 class="title"><?=$model->name?></h1>
         <div class="info-box">
@@ -342,7 +342,7 @@ $this->registerCssFile("/css/product.css");
 
 
 
-<main id="main" style="background-color: #fff!important; color: #000!important;">
+<main id="main">
     <?php if ($model->getByTags()):?>
         <div class="links-box">
             <div class="center-page">
@@ -364,7 +364,7 @@ $this->registerCssFile("/css/product.css");
     <div class="subscription-box">
         <div class="center-page">
             <div class="col">
-                <strong class="section-title" style="color: #000;"><?=Yii::t('app', 'Don\'t waste your time to find boats')?><br /><?=Yii::t('app', 'We will send them ourselves')?></strong>
+                <strong class="section-title"><?=Yii::t('app', 'Don\'t waste your time to find boats')?><br /><?=Yii::t('app', 'We will send them ourselves')?></strong>
                 <form action="#" class="subscription-form">
                     <div class="row">
                         <input type="email" name="email" placeholder="<?=Yii::t('app', 'Your email')?>" />
@@ -373,7 +373,7 @@ $this->registerCssFile("/css/product.css");
                 </form>
             </div>
             <div class="col share-box">
-                <div class="h2" style="color: #000;">Присоединяйтесь к нам в соцсетях <br /> &nbsp;</div>
+                <div class="h2">Присоединяйтесь к нам в соцсетях <br /> &nbsp;</div>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/safarimaris.ua" target="_blank"><img src="/facebook.png" alt="Facebook"></a>
                     <a href="https://t.me/safarimaris" target="_blank"><img src="/telegram.png" alt="Telegram"></a>
