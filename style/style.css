@@ -489,9 +489,6 @@ img {
     line-height: 21px;
     color: #FFFFFF;
 }
-#header .center-page {
-    max-width: none;
-}
 @media (max-width: 1200px) {
     .duration, .yacht, .departures {
         margin-bottom: 45px;
