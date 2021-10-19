@@ -428,7 +428,11 @@ img {
     overflow: hidden;
     display: block;
 }
-
+.day-content .image-box {
+    width: 235px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
 .ico-minus {
     display: none;
 }
