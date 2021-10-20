@@ -428,7 +428,7 @@ img {
     overflow: hidden;
     display: block;
 }
-.day-content .image-box {
+.dive-saits .image-box {
     width: 235px;
     flex-grow: 1;
     flex-shrink: 0;
@@ -452,7 +452,7 @@ img {
 .day-content {
     max-height: 50px;
     transition: max-height .5s;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .program-day-box--show .day-content {
