@@ -259,7 +259,7 @@ img {
 
 .slider img {
     width: 100px;
-    height: 100px;
+    height: auto;
 }
 
 .what-awaits .text {
@@ -345,10 +345,6 @@ img {
 
 .details {
     padding-bottom: 171px;
-}
-
-.details-box {
-    padding-right: 35px;
 }
 
 .details .title {
@@ -497,21 +493,22 @@ img {
     line-height: 21px;
     color: #FFFFFF;
 }
+.details-box ul {
+    padding-left: 20px !important;
+}
 @media (max-width: 1200px) {
-    .duration, .yacht, .departures {
+    .yacht, .departures {
         margin-bottom: 45px;
     }
-
-    .header_bg .title {
-        margin-left: 35px;
-    }
-
     .details-box:first-child {
         margin-bottom: 84px;
     }
 }
 
 @media (max-width: 775px) {
+    .header_bg {
+        padding-top: 205px;
+    }
     .what-awaits p {
         font-size: 13px;
     }

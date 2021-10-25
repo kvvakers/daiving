@@ -34,7 +34,7 @@ $this->registerCssFile("/css/product.css");
         <div class="info-box">
             <div class="row  justify-content-start justify-content-xl-between">
                 <?php if ($model->groupedTours['duration'] || $model->minDive):?>
-                    <div class="mb-3 col-6 col-lg-4 col-xl-2">
+                    <div class="mb-4 col-6 col-lg-4 col-xl-2">
                         <div class="duration">
                             <div class="info-title">Длительность</div>
                             <div class="info-descr">
@@ -340,48 +340,45 @@ $this->registerCssFile("/css/product.css");
     <?php endif;?>
 </div>
 
-
-
-<main id="main">
+<div class="details">
     <?php if ($model->getByTags()):?>
-        <div class="links-box">
-            <div class="center-page">
-                <div class="col-left">
-                    <strong class="section-title">Туры с похожим маршрутом на других яхтах</strong>
-                    <ul class="links-box__list">
-                        <?php foreach ($model->getByTags() as $item):?>
-                            <li class="links-box__item">
-                                <?=Html::a(strip_tags($item['name'].' - '.$item['productName']),
-                                    ['entity/show', 'country' => $item['url'], 'url' => $item['seoUrl']],
-                                    ['class' => 'links-box__link'])?>
-                            </li>
-                        <?php endforeach?>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      <div class="title">Туры с похожим маршрутом на других яхтах</div>
+      <ul class="links-row">
+                <?php foreach ($model->getByTags() as $item):?>
+                  <li class="col-12 col-md-6 col-xl-4">
+                      <?=Html::a(strip_tags($item['name'].' - '.$item['productName']),
+                          ['entity/show', 'country' => $item['url'], 'url' => $item['seoUrl']],
+                          ['class' => 'links-box__link'])?>
+                  </li>
+                <?php endforeach?>
+            </ul>
     <?php endif;?>
+</div>
+<div class="container">
+  <main id="main">
     <div class="subscription-box">
-        <div class="center-page">
-            <div class="col">
-                <strong class="section-title"><?=Yii::t('app', 'Don\'t waste your time to find boats')?><br /><?=Yii::t('app', 'We will send them ourselves')?></strong>
-                <form action="#" class="subscription-form">
-                    <div class="row">
-                        <input type="email" name="email" placeholder="<?=Yii::t('app', 'Your email')?>" />
-                        <input type="submit" class="submit" value="<?=Yii::t('app', 'Subscribe')?>"/>
-                    </div>
-                </form>
+      <div class="center-page">
+        <div class="col">
+          <strong class="section-title"><?=Yii::t('app', 'Don\'t waste your time to find boats')?><br /><?=Yii::t('app', 'We will send them ourselves')?></strong>
+          <form action="#" class="subscription-form">
+            <div class="row">
+              <input type="email" name="email" placeholder="<?=Yii::t('app', 'Your email')?>" />
+              <input type="submit" class="submit" value="<?=Yii::t('app', 'Subscribe')?>"/>
             </div>
-            <div class="col share-box">
-                <div class="h2">Присоединяйтесь к нам в соцсетях <br /> &nbsp;</div>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/safarimaris.ua" target="_blank"><img src="/facebook.png" alt="Facebook"></a>
-                    <a href="https://t.me/safarimaris" target="_blank"><img src="/telegram.png" alt="Telegram"></a>
-                </div>
-            </div>
+          </form>
         </div>
+        <div class="col share-box">
+          <div class="h2">Присоединяйтесь к нам в соцсетях <br /> &nbsp;</div>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/safarimaris.ua" target="_blank"><img src="/facebook.png" alt="Facebook"></a>
+            <a href="https://t.me/safarimaris" target="_blank"><img src="/telegram.png" alt="Telegram"></a>
+          </div>
+        </div>
+      </div>
     </div>
-</main>
+  </main>
+</div>
+
 
 <div class="popup-holder">
 
