@@ -450,7 +450,7 @@ img {
 }
 
 .day-content {
-    max-height: 50px;
+    max-height: 65px;
     transition: max-height .5s;
     overflow: hidden;
 }
