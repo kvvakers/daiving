@@ -127,7 +127,7 @@ $this->registerCssFile("/css/product.css");
     <div class="what-awaits">
       <div class="title"><?= Yii::t('app', 'What awaits us') ?></div>
         <?php if ($model->features): ?>
-          <div class="slider d-flex justify-content-between">
+          <div class="slider d-flex flex-wrap justify-content-between">
               <?php foreach ($model->features as $tag): ?>
                 <div class="d-flex align-items-center flex-column">
                   <img src="/images/slider_awaits<?= $tag->id ?>.png" alt="">
