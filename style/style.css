@@ -386,11 +386,10 @@ img {
     list-style: none;
     font-size: 18px;
     line-height: 21px;
-    /* identical to box height */
     padding-left: 40px;
     margin-bottom: 20px;
-    background-right: no-repeat;
-    background-size: cover;
+    background: url('../images/nfo-li.png') no-repeat 0 50%;
+    color: #FFFFFF;
     color: #FFFFFF;
 }
 
