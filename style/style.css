@@ -172,6 +172,11 @@ img {
     background: linear-gradient(268.62deg, #F8CA25 0.92%, #FFE600 99.23%);
     border-radius: 12px;
     padding: 14px 27px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #333971;
+
 }
 
 .date_tour .arrow {
