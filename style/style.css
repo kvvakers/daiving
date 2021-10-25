@@ -504,7 +504,9 @@ img {
         margin-bottom: 84px;
     }
 }
-
+.subscription-box .col {
+    flex: none;
+}
 @media (max-width: 775px) {
     .header_bg {
         padding-top: 205px;
