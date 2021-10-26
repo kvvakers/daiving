@@ -176,9 +176,14 @@ img {
     font-size: 18px;
     line-height: 21px;
     color: #333971;
-
 }
-
+.price-box .reserve a {
+    text-decoration: none;
+    color: #333971;
+    padding: 14px 27px;
+    margin: -14px -27px;
+    display: block;
+}
 .date_tour .arrow {
     margin-bottom: 118px;
 }
@@ -496,6 +501,9 @@ img {
 .details-box ul {
     padding-left: 20px !important;
 }
+.subscription-box .col {
+    flex: none;
+}
 @media (max-width: 1200px) {
     .yacht, .departures {
         margin-bottom: 45px;
@@ -504,9 +512,7 @@ img {
         margin-bottom: 84px;
     }
 }
-.subscription-box .col {
-    flex: none;
-}
+
 @media (max-width: 775px) {
     .header_bg {
         padding-top: 205px;
