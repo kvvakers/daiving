@@ -458,8 +458,18 @@ img {
     max-height: 65px;
     transition: max-height .5s;
     overflow: hidden;
+    position: relative;
 }
-
+.day-content:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 10px;
+    background: rgba(255, 255, 255, .5);
+    content: "";
+    width: 100%;
+}
 .program-day-box--show .day-content {
     max-height: 1000px;
 }
