@@ -226,7 +226,7 @@ img {
     color: #333971;
     margin-bottom: 43px;
 }
-.details-other title {
+.details-other .title {
     font-weight: bold;
     font-size: 25px;
     line-height: 29px;
@@ -235,11 +235,13 @@ img {
 }
 .details-other li {
     margin-bottom: 11px;
+    list-style: none;
 }
 .details-other li a {
     font-size: 18px;
     line-height: 21px;
     color: #FFFFFF;
+    text-decoration: none;
 }
 .galery {
     margin-bottom: 60px;
@@ -469,7 +471,7 @@ img {
 }
 
 .day-content {
-    max-height: 65px;
+    max-height: 60px;
     transition: max-height .5s;
     overflow: hidden;
     position: relative;
@@ -479,8 +481,8 @@ img {
     position: absolute;
     left: 0;
     bottom: 0;
-    height: 10px;
-    background: rgba(255, 255, 255, .5);
+    height: 36px;
+    background: linear-gradient(to top, #fff, transparent);
     content: "";
     width: 100%;
 }
