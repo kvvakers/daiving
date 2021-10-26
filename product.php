@@ -340,19 +340,21 @@ $this->registerCssFile("/css/product.css");
     <?php endif;?>
 </div>
 
-<div class="details">
-    <?php if ($model->getByTags()):?>
-      <div class="title">Туры с похожим маршрутом на других яхтах</div>
-      <ul class="links-row">
-                <?php foreach ($model->getByTags() as $item):?>
-                  <li class="col-12 col-md-6 col-xl-4">
-                      <?=Html::a(strip_tags($item['name'].' - '.$item['productName']),
-                          ['entity/show', 'country' => $item['url'], 'url' => $item['seoUrl']],
-                          ['class' => 'links-box__link'])?>
-                  </li>
-                <?php endforeach?>
-            </ul>
-    <?php endif;?>
+<div class="container">
+  <div class="details-other py-5">
+      <?php if ($model->getByTags()):?>
+        <div class="title">Туры с похожим маршрутом на других яхтах</div>
+        <ul class="row">
+            <?php foreach ($model->getByTags() as $item):?>
+              <li class="col-12 col-md-6 col-xl-4">
+                  <?=Html::a(strip_tags($item['name'].' - '.$item['productName']),
+                      ['entity/show', 'country' => $item['url'], 'url' => $item['seoUrl']],
+                      ['class' => 'links-box__link'])?>
+              </li>
+            <?php endforeach?>
+        </ul>
+      <?php endif;?>
+  </div>
 </div>
 <div class="container">
   <main id="main">

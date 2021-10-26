@@ -226,7 +226,21 @@ img {
     color: #333971;
     margin-bottom: 43px;
 }
-
+.details-other title {
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+    color: #FFFFFF;
+    margin-bottom: 35px;
+}
+.details-other li {
+    margin-bottom: 11px;
+}
+.details-other li a {
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
 .galery {
     margin-bottom: 60px;
     position: relative;
