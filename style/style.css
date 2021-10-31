@@ -226,12 +226,8 @@ img {
     color: #333971;
     margin-bottom: 43px;
 }
-.details-other .title {
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 29px;
-    color: #FFFFFF;
-    margin-bottom: 35px;
+.details-other .h1 {
+    color: #fff;
 }
 .details-other li {
     margin-bottom: 11px;
@@ -471,7 +467,7 @@ img {
 }
 
 .day-content {
-    max-height: 60px;
+    max-height: 55px;
     transition: max-height .5s;
     overflow: hidden;
     position: relative;

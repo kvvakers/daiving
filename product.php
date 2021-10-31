@@ -236,7 +236,7 @@ $this->registerCssFile("/css/product.css");
                       <div>
                         <div class="d-flex gap-3 mb-5 overflow-auto">
                             <?php foreach ($day->images as $k => $image): ?>
-                                <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery w-100 program-day-img"
+                                <a href="<?= $image->getUrl('original') ?>" class="fancy-gallery program-day-img"
                                    data-fancybox-group="day<?= $day->id ?>_gallery"
                                    title="<?= $image->name ?: $day->name ?>">
                                     <?= Html::img($image->getUrl('h300'),
@@ -341,15 +341,17 @@ $this->registerCssFile("/css/product.css");
 </div>
 
 <div class="container">
-  <div class="details-other py-5">
+  <div class="details-other about-us">
       <?php if ($model->getByTags()):?>
-        <div class="title">Туры с похожим маршрутом на других яхтах</div>
-        <ul class="row">
+        <div class="h1">Туры с похожим маршрутом на других яхтах</div>
+        <ul class="about-list__reason-list">
             <?php foreach ($model->getByTags() as $item):?>
-              <li class="col-12 col-md-6 col-xl-4">
-                  <?=Html::a(strip_tags($item['name'].' - '.$item['productName']),
-                      ['entity/show', 'country' => $item['url'], 'url' => $item['seoUrl']],
-                      ['class' => 'links-box__link'])?>
+              <li class="about-list__reason-list__item">
+                  <p>
+                      <?=Html::a(strip_tags($item['name'].' - '.$item['productName']),
+                          ['entity/show', 'country' => $item['url'], 'url' => $item['seoUrl']],
+                          ['class' => 'links-box__link'])?>
+                  </p>
               </li>
             <?php endforeach?>
         </ul>
